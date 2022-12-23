@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body{
+        background-color: aliceblue;
+    }
+    .container{
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .container h1 .container p{
+        color: #8a8a8a;
+    }
+    .container p{
+        font-size: 16px;
+    }
+    #title{
+        color: #ff6363;
+        padding-bottom: 15px;
+    }
+    .btn-success,.btn-success:focus{
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.3);
+        background-color: #ff6363;
+        border-color: #ff6363;
+    }
+    .btn-success:hover{
+        background-color: #ff6363;
+        border-color: #e06262;
+    }
+    .results{
+        text-align: center;
+        background-color: rgba(218,207,207,0.17);
+        max-width: 285px;
+        padding: 5px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.4); 
+    }
+    #tip,#total,#splitTotal{
+      color: #ff6363;
+    }
+    .btn-success{
+        width: 285px;
+    }
+    input[type="text"]{
+        font-size: 18px;
+        height: 45px;
+        padding: 5px;
+        width: 285px;
+        font-size: 16px !important;
+    }
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1 id="title" class="text-center">Tip Calculators</h1>
+        </header>
+
+        <form action="javascript:void(calc())">
+
+            <input type="text" class="form-control" id="bill" placeholder="Total Bill">
+            <br>
+            <input type="text" class="form-control" id="bill" placeholder="Number Of Person">
+            <br>
+            <button class="btn-success btn-lg">Calculators</button>
+            <br>
+            <br>
+            <div class="results">
+                <p><strong>tip:&nbsp;<span id="tip"></span></strong> </p>
+                <p><strong>total:&nbsp;<span id="total"></span></strong> </p>
+                <p><strong>Each Person Pay:&nbsp;<span id="splitTotal"></span></strong> </p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        var calc = function(){
+            var bill = Number(document.getElementById('bill').value);
+            var split = Number(document.getElementById('split').value);
+            var tip = bill * 15;
+            var totalBill = bill + tip;
+            var splitPerPerson = total/split
+            document.getElementById('tip').innerHTML = " "+
+            Number(tip).toFixed(2);
+
+            document.getElementById('total').innerHTML = " "+
+            Number(totalBill).toFixed(2);
+
+            document.getElementById('splitTotal').innerHTML = " "+
+            Number(splitPerPerson).toFixed(2);
+
+        }
+    </script>
+</body>
+</html>

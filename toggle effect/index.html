@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .background {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        background: #838385;
+        transition: 1.5s cubic-bezier(0.68, -0.15, 0.265, 1.35);
+    }
+
+    .toggle-body {
+        width: 7rem;
+        height: 4rem;
+        position: absolute;
+        top: calc(50% - 4rem/2);
+        left: calc(50% - 7rem/2);
+        /* top: 50%; left: 50%; */
+        /* transform: translate(-50%,-50%); */
+        background: #E9F4FF;
+        border-radius: 2rem;
+        animation: angle-reverse 1.5s cubic-bezier(0.68, -0.15, 0.265, 1.35);
+    }
+
+    .toggle-body--on {
+        animation: angle 1.5s cubic-bezier(0.68, -0.15, 0.265, 1.35);
+        ;
+        animation-direction: alternate;
+    }
+
+    .toggle-btn {
+        width: 2rem;
+        height: 2rem;
+        position: absolute;
+        top: calc(50% - 2rem/2);
+        left: calc(27% - 2rem/2);
+        /* top: 50%;left: 50%; */
+        /* transform: translate(-50%,-50%); */
+        background: white;
+        border-radius: 2rem;
+        background: #2299f8;
+        cursor: pointer;
+        transform: translateX(0);
+        transition: 1.5s cubic-bezier(0.68, -0.15, 0.265, 1.35);
+    }
+
+    .toggle-btn--on {
+        transition: 1.5s cubic-bezier(0.68, -0.15, 0.265, 1.35);
+        transform: translateX(150%);
+    }
+
+    @keyframes angle {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        50% {
+            transform: rotate(45deg);
+        }
+
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+
+    @keyframes angle-reverse {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        50% {
+            transform: rotate(-45deg);
+        }
+
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+</style>
+
+<body>
+    <div class="background">
+        <div class="toggle-body">
+            <div class="toggle-btn"></div>
+        </div>
+    </div>
+    <script>const toggleBody = document.querySelector('.toggle-body'); const toggleBtn = document.querySelector('.toggle-btn'); toggleBtn.addEventListener('click', () => { toggleBody.classList.toggle('toggle-body--on'); toggleBtn.classList.toggle('toggle-btn--on'); }); </script>
+</body>
+
+</html>

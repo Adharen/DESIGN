@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        transition: all 1.5s;
+    }
+
+    body {
+        background-color: #fff;
+    }
+
+    .back {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.2);
+        top: 0;
+        left: -1750px;
+        z-index: 1;
+    }
+
+    .form {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: black;
+        padding: 2rem 3rem;
+        outline: none;
+        border: 0;
+        border-radius: 1rem;
+        box-shadow: 2rem 2rem 2rem rgba(0, 0, 0, 0.3);
+    }
+
+    .form input {
+        display: block;
+        margin: 3rem;
+        padding: 1rem;
+        outline: none;
+        border: 0;
+        border-radius: 1rem;
+        background-color: rgb(255, 102, 0);
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.5s;
+        text-align: center;
+    }
+
+    .form input:hover {
+        background-color: #fff;
+        color: rgb(255, 102, 0);
+    }
+
+    .btn1 {
+        position: absolute;
+        top: 3rem;
+        left: 3rem;
+        box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.1);
+        z-index: 1;
+    }
+
+    .btn1 button {
+        padding: 1rem;
+        outline: none;
+        border: 0;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <div class="back">
+        <div class="form">
+            <input type="text" placeholder="enter your name...." id="name" min="100" max="300" required>
+            <input type="" placeholder="enter your city name...." id="city" min="100" max="300" required>
+            <input type="text" placeholder="enter your ege" id="age" required>
+            <input type="submit" value="send" id="send" class="theme" onclick="myFunction()">
+
+        </div>
+    </div>
+
+    <div class="btn1">
+        <button class="btn1">FORM</button>
+    </div>
+
+    <script>
+
+        const btn2 = document.querySelector(".btn1");
+        const body = document.querySelector(".bd");
+        const form = document.querySelector(".form");
+        const ipt = document.getElementsByTagName("input");
+        const age = document.querySelector("#age");
+        const back = document.querySelector(".back");
+
+
+        function myFunction() {
+            const Name = document.getElementById("name");
+            const city = document.getElementById("city");
+            const age = document.getElementById("age");
+            if (!Name.checkValidity()) {
+                alert(Name.validationMessage);
+            }
+            else if (!city.checkValidity()) {
+                alert("please enter the city!");
+            }
+            else if (!age.checkValidity()) {
+                alert("please enter the age!");
+            }
+            else {
+                alert(`Hey ${Name.value} Thank You For Ragistration ! have a nice day`);
+            }
+        }
+
+        btn1.addEventListener("click", () => {
+            if (back.style.left == "-2000px") {
+                back.style.left = "0px"
+            }
+            else {
+                back.style.left = "-2000px"
+            }
+        })
+    </script>
+</body>
+
+</html>

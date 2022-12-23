@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/23d51736fe.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<style>
+    
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    display: flex;
+    background: #ccc;
+    justify-content: center;
+    align-items: center;
+    min-width: 100vh;
+}
+.video{
+    width: 100%;
+}
+.c-video{
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    overflow: hidden;
+}
+.c-video:hover .controls{
+    transform: translateY(0);
+}
+.controls{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    flex-wrap: wrap;
+    background: rgba(0, 0, 0, 0.7);
+    transform: translateY(100%) translateY(-5px);
+    transition: all 0.2s;
+}
+.buttons{
+    padding: 10px;
+}
+.buttons button{
+    background: none;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+.buttons button::before{
+    content:'\f144';
+    font-family: sans-serif;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    font-size: 28px;
+    color: #fff;
+    -webkit-font-smoothing:antialiased;
+}
+.buttons button.play::before{
+    content:'\f144';
+}
+.buttons button.pause::before{
+    content:'\f28b';
+}
+.orange-bar{
+    height: 10px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+}
+.orange-juice{
+    height: 10px;
+    /* width: 100px; */
+    background-color: orangered;
+}
+
+</style>
+
+<!-- ---------------------------------------------------------------------------------- -->
+
+
+<body>
+    
+ <div class="container">
+     <div class="c-video">
+         <video src="fruits.mp4" class="video"></video>
+         <div class="controls">
+             <div class="orange-bar">
+                 <div class="orange-juice"></div>
+             </div>
+             <div class="buttons">
+                 <button id="play-pause"></button>
+             </div>
+         </div>
+     </div>
+ </div>
+
+
+ <!-- -------------------------------------------------------------------------- -->
+
+
+ <script>
+     var video=document.querySelector(".video");
+var juice=document.querySelector(".orange-juice");
+var btn=document.getElementById("play-pause");
+function togglePlayPause(){
+    if(video.paused){
+        btn.className="pause";
+        video.play();
+    }else{
+        btn.className="play";
+        video.pause();
+    }
+}
+btn.onclick=function(){
+    togglePlayPause();
+}
+video.addEventListener("timeupdate", function(){
+    var juicepos = video.currentTime / video.duratiobn;
+    juice.style.width = juicepos * 100 + "%";
+    if(video.ended){
+        btn.className="play";
+    }
+})
+ </script>
+</body>
+</html>

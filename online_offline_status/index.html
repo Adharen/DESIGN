@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #webdevlessons{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    }
+</style>
+<body>
+    <p id="webdevlessons"> I AM NOT SURE </p>
+
+    <script>
+        let webdevlessons = document.getElementById("webdevlessons");
+
+        if(navigator.onLine){
+            webdevlessons.textContent = "WE ARE ONLINE !";
+            webdevlessons.style.color = "green";
+        }
+
+        window.addEventListener("online",function(){
+            webdevlessons.textContent = "WE ARE ONLINE !";
+            webdevlessons.style.color = "green";
+        })
+
+        window.addEventListener("offline",function(){
+            webdevlessons.textContent = "WE ARE ONLINE !";
+            webdevlessons.style.color = "red";
+        })
+    </script>
+</body>
+</html>

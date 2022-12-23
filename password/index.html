@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+    <meta charset=UTF-8>
+    <meta content="IE=edge" http-equiv=X-UA-Compatible>
+    <meta content="width=device-width,initial-scale=1" name=viewport>
+    <script crossorigin=anonymous src=https://kit.fontawesome.com/aaf8ecb56b.js></script>
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background: #dbdbdb;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center
+    }
+
+    .pwd {
+        background: #111625;
+        border-radius: 12px;
+        box-shadow: rgba(100, 100, 111, .5) 0 7px 29px 0;
+        position: relative
+    }
+
+    .pwd input {
+        background: 0 0;
+        border: none;
+        font-size: 1.2em;
+        color: #5358b9
+    }
+
+    .pwd input:focus {
+        outline: 0
+    }
+
+    .pwd i {
+        font-size: 1.4em;
+        padding: 1em;
+        color: #dbdbdb;
+        transition: .3s
+    }
+
+    .pwd .fa-eye,
+    .pwd .fa-eye-slash {
+        cursor: pointer;
+        color: #5358b9;
+        width: 1.2em
+    }
+
+    .pwd .overlay {
+        position: absolute;
+        top: 50%;
+        right: 1em;
+        transform: translateY(-50%);
+        background: #dbdbdb;
+        width: 2.5em;
+        height: 2.5em;
+        border-radius: 50%;
+        z-index: 0;
+        transition: .5s ease-in-out
+    }
+
+    .pwd .overlaycover {
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+        right: 0
+    }
+
+    .pwd>div:nth-child(2) {
+        position: relative
+    }
+</style>
+
+<body>
+    <div class=pwd>
+        <div class=overlay></div>
+        <div><i class="fas fa-lock"></i> <input placeholder=Password... type=password> <i class="fas fa-eye-slash"></i>
+        </div>
+    </div>
+    <script>
+        const input = document.querySelector(".pwd input");
+        const eye = document.querySelector(".pwd .fa-eye-slash");
+        const lock = document.querySelector(".pwd .fa-lock");
+        const overlay = document.querySelector(".pwd .overlay");
+    </script>
+
+</body>
+
+</html>

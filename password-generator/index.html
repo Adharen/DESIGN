@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin=anonymous src=https://kit.fontawesome.com/aaf8ecb56b.js></script>
+    <title>Document</title>
+</head>
+<style>
+.result-container{
+    background-color: var(--bg-color);
+    border: 12px solid  var(--bg-color);
+    filter: var(--filter2);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    font-size: 18px;
+    letter-spacing: 1px;
+    height: 60px;
+    width: 100%;
+    margin-bottom: 35px;
+}
+textarea{
+    background: none;
+    border: none;
+    color: var(--color);
+    font-size: 20px;
+    margin-top: auto;
+    outline: none;
+    resize: none;
+}
+
+.result-container .btn{
+    font-size: 20px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 40px;
+    width: 40px;
+}
+.button{
+    display: flex;
+}
+
+.btn{
+    width: 50%;
+    border: none;
+    color: var(--color);
+    cursor: pointer;
+    font-size: 16px;
+    padding: 8px 12px;
+    margin: 14px 5px 7px 5px;
+    background-color: var(--bg-color);
+    filter: var(--filter2);
+}
+
+</style>
+<body>
+
+<div class="result-container">
+    <textarea name="" id="passwordResult" ></textarea>
+</div>
+<div class="settings">
+
+    <div class="setting">
+        <label >Passowrd length</label>
+        <input type="number" name="" id="Passwordlength" min="4" max="20" value="8">
+    </div>
+
+    <div class="setting">
+        <label >include uppercase letters</label>
+        <input type="checkbox" name="" id="uppercase" checked>
+    </div>
+
+    <div class="setting">
+        <label >include lowercase letters</label>
+        <input type="checkbox" name="" id="lowercase" checked>
+    </div>
+
+    <div class="setting">
+        <label >include numbers</label>
+        <input type="checkbox" name="" id="numbers" checked>
+    </div>
+
+    <div class="setting">
+        <label >include symbols</label>
+        <input type="checkbox" name="" id="symbols" checked>
+    </div>
+
+
+</div>
+
+<div class="buttons">
+    <button class="btn btn-large" id="generatebtn">
+    <i class="fas fa-key"></i> Generate
+    </button>
+
+    <button class="btn" id="clipboardBtn">
+        <i class="far fa-clipboard"></i> Copy
+        </button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+    </script>
+</body>
+</html>

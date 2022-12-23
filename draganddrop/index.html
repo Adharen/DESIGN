@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/aaf8ecb56b.js" crossorigin="anonymous"></script>
+    <script src="main.js" defer></script>
+    <title>Document</title>
+    
+</head>
+<body>
+    <section class="draggable-elements">
+       <img src="text.png" class="draggable" style="color: rgb(76, 82, 137);"    draggable="true"  id="text"/>
+        <img src="pdf.png"  class="draggable" style="color: rgb(228, 148, 148);"  draggable="true"  id="pdf"/>
+        <img src="png.png"  class="draggable" style="color: rgb(148, 156, 228);"   draggable="true"  id="png"/>
+        <img src="code.png" class="draggable"  style="color: rgb(113, 227, 68);"   draggable="true"  id="code"/>
+        <img src="ppt.png"  class="draggable"  style="color: rgb(207, 143, 112);"  draggable="true"  id="ppt"/>
+      </section>
+      <!-- <section class="draggable-elements">
+        <i class="fas fa-dog draggable" draggable="true" style="color: #36a2eb;" id="png"></i>
+        <i class="fas fa-dove draggable" draggable="true" style="color: #ffce56;" id="code"></i>
+        <i class="fas fa-fish draggable" draggable="true" style="color: #9966ff;" id="text"></i>
+        <i class="fas fa-frog draggable" draggable="true" style="color: #4bc0c0;" id="ppt"></i>
+      </section> -->
+      <section class="droppable-elements">
+        <div class="droppable" data-draggable-id="pdf" ><span>upload resume</span></div>
+        <div class="droppable" data-draggable-id="png" ><span>upload profile image</span></div>
+        <div class="droppable" data-draggable-id="code" ><span>upload source code</span></div>
+        <div class="droppable" data-draggable-id="text" ><span>upload text file</span></div>
+        <div class="droppable" data-draggable-id="ppt" ><span>upload ppt file</span></div>
+        <!-- <div class="droppable" data-draggable-id="spider"><span>Spider</span></div>
+        <div class="droppable" data-draggable-id="horse"><span>Horse</span></div>
+        <div class="droppable" data-draggable-id="hippo"><span>Hippo</span></div> -->
+      </section>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .con-info {
+        position: fixed;
+        bottom: 0px;
+        width: calc(100% - 30px);
+        left: 0px;
+        margin: 15px;
+        margin-bottom: 30px;
+        padding: 10px;
+        background: #fff;
+        border-radius: 20px;
+    }
+
+    #adress {
+        padding: 15px 15px;
+        width: 100%;
+        border: 0px;
+        background: #eaedf7;
+        border-radius: 15px;
+        font-weight: bold;
+        font-size: 1rem;
+    }
+
+    #adress::placeholder {
+        color: #94a4d3;
+    }
+
+    .con-info button {
+        padding: 15px;
+        width: 100%;
+        margin-top: 15px;
+        border-radius: 14px;
+        border: 0px;
+        background: #0068fc;
+        color: #fff;
+        font-size: 1rem;
+    }
+</style>
+
+<body>
+    <div id="map"></div>
+    <div class="con-info">
+        <input type="text" placeholder="Direccion de entrega" id="address" autocomplete="off">
+        <button>
+            Enviar a esta Direccion
+        </button>
+    </div>
+
+    <script>
+        map = new google.maps.Map(document.getElementById("map"), {
+            center: latLng,
+            zoom: 15,
+            zoomControl: false,
+            fullscreenControl:false,
+            mapTypeControl: false,
+            streetViewControl: false
+        });
+
+        const marker = new google.maps.Marker({
+            map,
+            draggablde: true,
+            animation: google.map.Animation.DROP,
+            title: "click to zoom",
+        });
+        function handleChangePosition(data) {
+            const lat = data.latLng.lat()
+            const Lng = data.latLng.lng()
+
+            const geocoder = new google.maps.Geocoder()
+
+            console.log(marker)
+            marker.setPosition({ let, lng })
+            map.panTo({ lat, lng })
+
+            geocoder.Geocode({ location: { lat, lng } }, (results, status) => {
+                if (status === 'OK') {
+                    const address = results[0].formatted_address
+                    const input = document.querySelector("#address")
+                    input.value = address
+                }
+            })
+        }
+        marker.addListener("dragend", (data) => {
+            handleChangePosition(data)
+        })
+
+        map.addListener("click", (data) => {
+            handleChangePosition(data)
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ <style>
+     body{
+         background-color: rgb(168, 166, 166);
+     }
+   .btn{
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       min-height: 100vh;
+   }
+   .btn1{
+      padding:1rem;
+      border: 0;
+      outline: none;
+      border-radius: 1rem;
+      cursor: pointer;
+      margin: 20px;
+   }
+ </style>
+<body>
+   
+    <div class="btn">
+        <button onclick="vibrate(1000)" class="btn1">Vibrate only 1 time</button>
+        <button onclick="vibratePattern()" class="btn1">Vibrate in Nap</button>
+    </div>
+
+    <script>
+        function Vibrate(ms){
+            navigator.vibrate(ms)
+        }
+
+        function vibratePattern(){
+            navigator.vibrate([300,100,300,100,300])
+        }
+    </script>
+</body>
+</html>
